@@ -14,13 +14,13 @@ public class CelsiusCelsiusKelvin extends Conversor {
     private static final double UN_KELVIN = 273.15;
     
     @Override
-    public double convertirAValor2(double kelvin) {
-        return kelvin - UN_KELVIN;
+    public double convertirAValor2(double celsius) {
+        return celsius + UN_KELVIN;
     }
 
     @Override
     public double convertirAValor1(double celsius) {
-        return celsius + UN_KELVIN;
+        return celsius - UN_KELVIN;
     }
 
      @Override

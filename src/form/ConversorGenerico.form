@@ -35,8 +35,8 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="inputCentimetros" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
-                          <Component id="inputPulgadas" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
+                          <Component id="input1" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
+                          <Component id="input2" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="41" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -61,14 +61,14 @@
               <Component id="valor1Label" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="inputCentimetros" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="input1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="ConvertirBtn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="valor2Label" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="inputPulgadas" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="input2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="ConversoresComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
@@ -82,10 +82,10 @@
         <Property name="text" type="java.lang.String" value="valor1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputCentimetros">
+    <Component class="javax.swing.JTextField" name="input1">
       <Events>
-        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="inputCentimetrosFocusLost"/>
-        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="inputCentimetrosKeyReleased"/>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="input1FocusLost"/>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="input1KeyReleased"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="valor2Label">
@@ -93,10 +93,10 @@
         <Property name="text" type="java.lang.String" value="valor2"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputPulgadas">
+    <Component class="javax.swing.JTextField" name="input2">
       <Events>
-        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="inputPulgadasFocusLost"/>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="inputPulgadasKeyPressed"/>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="input2FocusLost"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="input2KeyPressed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="ConvertirBtn">

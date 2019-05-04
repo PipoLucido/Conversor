@@ -13,8 +13,7 @@ import javax.swing.JOptionPane;
 public class ConversorGenerico extends javax.swing.JFrame {
 
     
-    public boolean option1 = false; 
-    public boolean option2 = true;
+    public boolean convertir1a2; 
     int selectedIndex;
     double conversion1;
     double conversion2;
@@ -71,10 +70,10 @@ public class ConversorGenerico extends javax.swing.JFrame {
          // Evento del boton
         System.out.println("Transform");
         
-        if(option1){
-            System.out.println("Transform option2 a option1");
+        if(convertir1a2){
+            System.out.println("Transform input1 a input2");
             
-            String pulgValue = inputPulgadas.getText().replace(",", ".");
+            String pulgValue = input1.getText().replace(",", ".");
             
               pulgValue = pulgValue.replace("\n", "");
                    
@@ -97,17 +96,14 @@ public class ConversorGenerico extends javax.swing.JFrame {
         
         //centAPulgada, cent /2.54
         Double centDouble = conversores.get(selectedIndex).convertirAValor2(pulgDouble);//pulgDouble * 2.54; //igualar a metodo conversor.centimetrospulgada.convertirAValor2();
-        inputCentimetros.setText(String.format("%.5f",centDouble));
+        input2.setText(String.format("%.5f",centDouble));
         
         }
-        
-        
-        
-        
-        if(option2){
-            System.out.println("Transform option1 a option2");
+        else
+        {
+            System.out.println("Transform input2 a input1");
             
-            String centValue = inputCentimetros.getText().replace(",", ".");
+            String centValue = input2.getText().replace(",", ".");
             
               centValue = centValue.replace("\n", "");
                  
@@ -130,7 +126,7 @@ public class ConversorGenerico extends javax.swing.JFrame {
         
         //centAPulgada, cent /2.54
         Double pulgDouble = conversores.get(selectedIndex).convertirAValor1(centDouble);// centDouble / 2.54;//igualar a metodo conversor.centimetrospulgada.convertirAValor1();
-        inputPulgadas.setText(String.format("%.5f",pulgDouble));
+        input1.setText(String.format("%.5f",pulgDouble));
             
         }
         
@@ -148,9 +144,9 @@ public class ConversorGenerico extends javax.swing.JFrame {
     private void initComponents() {
 
         valor1Label = new javax.swing.JLabel();
-        inputCentimetros = new javax.swing.JTextField();
+        input1 = new javax.swing.JTextField();
         valor2Label = new javax.swing.JLabel();
-        inputPulgadas = new javax.swing.JTextField();
+        input2 = new javax.swing.JTextField();
         ConvertirBtn = new javax.swing.JButton();
         ConversoresComboBox = new javax.swing.JComboBox<>();
 
@@ -158,27 +154,27 @@ public class ConversorGenerico extends javax.swing.JFrame {
 
         valor1Label.setText("valor1");
 
-        inputCentimetros.addFocusListener(new java.awt.event.FocusAdapter() {
+        input1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                inputCentimetrosFocusLost(evt);
+                input1FocusLost(evt);
             }
         });
-        inputCentimetros.addKeyListener(new java.awt.event.KeyAdapter() {
+        input1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                inputCentimetrosKeyReleased(evt);
+                input1KeyReleased(evt);
             }
         });
 
         valor2Label.setText("valor2");
 
-        inputPulgadas.addFocusListener(new java.awt.event.FocusAdapter() {
+        input2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                inputPulgadasFocusLost(evt);
+                input2FocusLost(evt);
             }
         });
-        inputPulgadas.addKeyListener(new java.awt.event.KeyAdapter() {
+        input2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                inputPulgadasKeyPressed(evt);
+                input2KeyPressed(evt);
             }
         });
 
@@ -209,8 +205,8 @@ public class ConversorGenerico extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inputCentimetros, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputPulgadas, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(input1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(input2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -227,13 +223,13 @@ public class ConversorGenerico extends javax.swing.JFrame {
                 .addComponent(valor1Label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inputCentimetros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(input1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ConvertirBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(valor2Label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inputPulgadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(input2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ConversoresComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12))
         );
@@ -245,19 +241,20 @@ public class ConversorGenerico extends javax.swing.JFrame {
        convertir();
     }//GEN-LAST:event_ConvertirBtnActionPerformed
 
-    private void inputCentimetrosFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputCentimetrosFocusLost
+    private void input1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input1FocusLost
         // TODO add your handling code here:
-        System.out.println("focus lost option1");
-        option1 = false;
-        option2 = true;
-    }//GEN-LAST:event_inputCentimetrosFocusLost
+        System.out.println("focus lost option1 (perdio el foco)");
+        convertir1a2 = true;
+        
+        System.out.println(convertir1a2);
+    }//GEN-LAST:event_input1FocusLost
 
-    private void inputPulgadasFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputPulgadasFocusLost
+    private void input2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input2FocusLost
         // TODO add your handling code here:
-        System.out.println("focus lost option2");
-        option2 = false;
-        option1 = true;
-    }//GEN-LAST:event_inputPulgadasFocusLost
+        System.out.println("focus lost option2 (perdio el foco)");
+        convertir1a2 = false;
+        System.out.println(convertir1a2);
+    }//GEN-LAST:event_input2FocusLost
 
     private void ConversoresComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ConversoresComboBoxItemStateChanged
         
@@ -267,26 +264,27 @@ public class ConversorGenerico extends javax.swing.JFrame {
          
     }//GEN-LAST:event_ConversoresComboBoxItemStateChanged
 
-    private void inputCentimetrosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inputCentimetrosKeyReleased
+    private void input1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input1KeyReleased
         
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
-            System.out.println("enter option1 a option2");
+            System.out.println("evento de enter cambia option1 a option2");
+            convertir1a2 = true;
+            System.out.println(convertir1a2);
             convertir();
         }
         
         
-    }//GEN-LAST:event_inputCentimetrosKeyReleased
+    }//GEN-LAST:event_input1KeyReleased
 
-    private void inputPulgadasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inputPulgadasKeyPressed
+    private void input2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input2KeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
-            System.out.println("enter option2 a option1");
+            System.out.println("evento enter cambia de option2 a option1");
+            convertir1a2 = false;
+            System.out.println(convertir1a2);
             convertir();
         }
-    }//GEN-LAST:event_inputPulgadasKeyPressed
-
-    
-    
-    
+    }//GEN-LAST:event_input2KeyPressed
+   
     
     /**
      * @param args the command line arguments
@@ -330,8 +328,8 @@ public class ConversorGenerico extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ConversoresComboBox;
     private javax.swing.JButton ConvertirBtn;
-    private javax.swing.JTextField inputCentimetros;
-    private javax.swing.JTextField inputPulgadas;
+    private javax.swing.JTextField input1;
+    private javax.swing.JTextField input2;
     private javax.swing.JLabel valor1Label;
     private javax.swing.JLabel valor2Label;
     // End of variables declaration//GEN-END:variables

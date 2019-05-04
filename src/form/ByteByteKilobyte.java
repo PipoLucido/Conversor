@@ -14,13 +14,13 @@ public class ByteByteKilobyte extends Conversor{
     private static final double UN_KB = 1000;
     
     @Override
-    public double convertirAValor2(double KB) {
-        return KB * UN_KB;
+    public double convertirAValor2(double B) {
+        return B / UN_KB;
     }
 
     @Override
-    public double convertirAValor1(double B) {
-        return B / UN_KB;
+    public double convertirAValor1(double KB) {
+        return KB * UN_KB;
     }
 
      @Override

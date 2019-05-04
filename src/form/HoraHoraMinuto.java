@@ -11,20 +11,20 @@ package form;
  */
 public class HoraHoraMinuto extends Conversor{
     
-    private static final double UNA_HORA = 60;
+    private static final double UNA_MINUTOS = 60;
     
     @Override
-    public double convertirAValor2(double hora) {
+    public double convertirAValor2(double minuto) {
      
-    return hora * UNA_HORA;
+    return minuto / UNA_MINUTOS;
     
     
     }
 
     @Override
-    public double convertirAValor1(double minutos) {
+    public double convertirAValor1(double hora) {
     
-    return minutos / UNA_HORA;
+    return hora * UNA_MINUTOS;
     
     }
 
